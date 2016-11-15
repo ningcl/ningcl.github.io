@@ -332,8 +332,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
                   </a>
                 </span>
 
@@ -373,19 +373,12 @@
 
       
         
-          
-            <p>Handlebars 为你提供了一个可以毫无挫折感的高效率书写 <strong>语义化的模板</strong> 所必需的一切。</p>
-<h1 id="第一步：导入相关的JS文件"><a href="#第一步：导入相关的JS文件" class="headerlink" title="第一步：导入相关的JS文件"></a>第一步：导入相关的JS文件</h1><p>Handlebars 是一个Jquery插件，在引入Handlebars .js之前需要引进jquery.js。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"js/jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"js/handlebars.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h1 id="第二步：编写Handlebars-模板"><a href="#第二步：编写Handlebars-模板" class="headerlink" title="第二步：编写Handlebars 模板"></a>第二步：编写Handlebars 模板</h1><p>Handlebars的表达式 是以“”开始，以“”结尾。如果上下文中包含HTML代码，则需要把双大括号换成三个大括号即可：“”，可以通过script标签把模板加载到浏览器中，并设置script标签的type属性为浏览器不能够辨别的（此处可自由发挥）。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">id</span>=<span class="string">"list-template"</span> <span class="attr">type</span>=<span class="string">"text/x-handlebars-template"</span>&gt;</span><span class="xml"></span></div><div class="line">	&#123;&#123;#each data&#125;&#125;</div><div class="line">		<span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">td</span>&gt;</span>姓名:&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span> </div><div class="line">			<span class="tag">&lt;<span class="name">td</span>&gt;</span>年龄:&#123;&#123;age&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">td</span>&gt;</span>性别:&#123;&#123;sex&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">tr</span>&gt;</span>		</div><div class="line">	&#123;&#123;/each&#125;&#125; </div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="第三步：预编译Handlebars-的模板"><a href="#第三步：预编译Handlebars-的模板" class="headerlink" title="第三步：预编译Handlebars 的模板"></a>第三步：预编译Handlebars 的模板</h1><p>在 JavaScript 中可以使用 Handlebars.compile()方法来编译模板。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> source   = $(<span class="string">"#list-template"</span>).html();</div><div class="line"><span class="keyword">var</span> template = Handlebars.compile();</div></pre></td></tr></table></figure>
-<h1 id="第四步：传递上下文，执行模板"><a href="#第四步：传递上下文，执行模板" class="headerlink" title="第四步：传递上下文，执行模板"></a>第四步：传递上下文，执行模板</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data=[</div><div class="line">	&#123;<span class="attr">name</span>:<span class="string">"张三"</span>,<span class="attr">age</span>:<span class="string">"18"</span>，sex：<span class="string">"男"</span>&#125;,</div><div class="line">	&#123;<span class="attr">name</span>:<span class="string">"李四"</span>,<span class="attr">age</span>:<span class="string">"22"</span>，sex：<span class="string">"女"</span>&#125;,</div><div class="line">	&#123;<span class="attr">name</span>:<span class="string">"王五"</span>,<span class="attr">age</span>:<span class="string">"24"</span>，sex：<span class="string">"男"</span>&#125;</div><div class="line">];</div><div class="line"><span class="keyword">var</span> html = template(&#123;<span class="attr">data</span>:data&#125;);</div></pre></td></tr></table></figure>
-<p>执行之后，这个模板就会渲染出：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">td</span>&gt;</span>姓名:张三<span class="tag">&lt;/<span class="name">td</span>&gt;</span> </div><div class="line">	<span class="tag">&lt;<span class="name">td</span>&gt;</span>年龄:18<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">td</span>&gt;</span>性别:男<span class="tag">&lt;/<span class="name">td</span>&gt;</span>		</div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">td</span>&gt;</span>姓名:李四<span class="tag">&lt;/<span class="name">td</span>&gt;</span> </div><div class="line">	<span class="tag">&lt;<span class="name">td</span>&gt;</span>年龄:22<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">td</span>&gt;</span>性别:女<span class="tag">&lt;/<span class="name">td</span>&gt;</span>		</div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">td</span>&gt;</span>姓名:王五<span class="tag">&lt;/<span class="name">td</span>&gt;</span> </div><div class="line">	<span class="tag">&lt;<span class="name">td</span>&gt;</span>年龄:24<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">td</span>&gt;</span>性别:男<span class="tag">&lt;/<span class="name">td</span>&gt;</span>		</div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>本篇文章只是叙述了使用Handlebars最基础的流程，后续将讲解Handlebars.js的具体用法。</p>
-
-          
+          <p>Handlebars 是 JavaScript 一个语义模板库，通过对view和data的分离来快速构建web模板。它采用”Logic-less template”（无逻辑模版）的思路，在加载时被预编译，而不是到了客户端执行到代码时再去编译，这样可以保证模板加载和运行的速度。Handlebars兼容Mustache，你可以在Handlebars中导入Mustache模板。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/14/blog/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -714,7 +707,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
