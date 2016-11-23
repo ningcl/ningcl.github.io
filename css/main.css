@@ -988,8 +988,7 @@ pre .javascript .function {
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
 }
-.menu .menu-item a:hover,
-.menu-item-active a {
+.menu .menu-item a:hover {
   border-bottom-color: #222;
 }
 .menu .menu-item .fa {
@@ -1550,7 +1549,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b60d6a;
+  background: #17704b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2363,7 +2362,7 @@ body {
 }
 @media screen and (max-width: 767px) {
   .menu .menu-item a {
-    padding: 5px 3px;
+    padding: 5px 10px;
   }
 }
 @media screen and (min-width: 767px) {
@@ -2371,13 +2370,16 @@ body {
     padding: 5px 20px;
   }
 }
-.menu .menu-item a:hover,
-.menu-item-active a {
-  background: #f9f9f9;
+.menu .menu-item a:hover {
+  background: #eee;
   border-bottom-color: #fff;
 }
 .menu .menu-item br {
   display: none;
+}
+.menu-item-active a {
+  background: #000 !important;
+  color: #fff;
 }
 .menu-item-active a:after {
   content: " ";
@@ -2388,7 +2390,7 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: #bbb;
+  background-color: transparent;
 }
 .btn-bar {
   background-color: #fff;
