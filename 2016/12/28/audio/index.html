@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Handlebars," />
+  <meta name="keywords" content="HTML5," />
 
 
 
@@ -102,16 +102,16 @@
 
 
 
-<meta name="description" content="Handlebars 是 JavaScript 一个语义模板库，通过对view和data的分离来快速构建web模板。它采用”Logic-less template”（无逻辑模版）的思路，在加载时被预编译，而不是到了客户端执行到代码时再去编译，这样可以保证模板加载和运行的速度。Handlebars兼容Mustache，你可以在Handlebars中导入Mustache模板。">
+<meta name="description" content="HTML5的audio功能上已经非常强大，回放，跳转，缓冲等以前只能用flash才能实现的功能，现在HTML的audio都能轻松搞定。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Handlebars使用流程">
-<meta property="og:url" content="http://www.ningcl.com/2016/11/14/blog/index.html">
+<meta property="og:title" content="HTML5中audio的详细使用">
+<meta property="og:url" content="http://www.ningcl.com/2016/12/28/audio/index.html">
 <meta property="og:site_name" content="水泊梁山">
-<meta property="og:description" content="Handlebars 是 JavaScript 一个语义模板库，通过对view和data的分离来快速构建web模板。它采用”Logic-less template”（无逻辑模版）的思路，在加载时被预编译，而不是到了客户端执行到代码时再去编译，这样可以保证模板加载和运行的速度。Handlebars兼容Mustache，你可以在Handlebars中导入Mustache模板。">
-<meta property="og:updated_time" content="2016-12-28T07:33:30.987Z">
+<meta property="og:description" content="HTML5的audio功能上已经非常强大，回放，跳转，缓冲等以前只能用flash才能实现的功能，现在HTML的audio都能轻松搞定。">
+<meta property="og:updated_time" content="2016-12-28T07:27:08.858Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Handlebars使用流程">
-<meta name="twitter:description" content="Handlebars 是 JavaScript 一个语义模板库，通过对view和data的分离来快速构建web模板。它采用”Logic-less template”（无逻辑模版）的思路，在加载时被预编译，而不是到了客户端执行到代码时再去编译，这样可以保证模板加载和运行的速度。Handlebars兼容Mustache，你可以在Handlebars中导入Mustache模板。">
+<meta name="twitter:title" content="HTML5中audio的详细使用">
+<meta name="twitter:description" content="HTML5的audio功能上已经非常强大，回放，跳转，缓冲等以前只能用flash才能实现的功能，现在HTML的audio都能轻松搞定。">
 
 
 
@@ -129,7 +129,7 @@
   };
 </script>
 
-  <title> Handlebars使用流程 | 水泊梁山 </title>
+  <title> HTML5中audio的详细使用 | 水泊梁山 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -269,7 +269,7 @@
             
             
               
-                Handlebars使用流程
+                HTML5中audio的详细使用
               
             
           </h1>
@@ -281,8 +281,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-14T20:34:31+08:00" content="2016-11-14">
-              2016-11-14
+            <time itemprop="dateCreated" datetime="2016-12-28T15:04:21+08:00" content="2016-12-28">
+              2016-12-28
             </time>
           </span>
 
@@ -311,8 +311,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/14/blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/14/blog/" itemprop="commentsCount"></span>
+                <a href="/2016/12/28/audio/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/28/audio/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -335,16 +335,33 @@
       
 
       
-        <p>Handlebars 是 JavaScript 一个语义模板库，通过对view和data的分离来快速构建web模板。它采用”Logic-less template”（无逻辑模版）的思路，在加载时被预编译，而不是到了客户端执行到代码时再去编译，这样可以保证模板加载和运行的速度。Handlebars兼容Mustache，你可以在Handlebars中导入Mustache模板。<br><a id="more"></a></p>
-<h1 id="第一步：导入相关的JS文件"><a href="#第一步：导入相关的JS文件" class="headerlink" title="第一步：导入相关的JS文件"></a>第一步：导入相关的JS文件</h1><p>Handlebars 是一个Jquery插件，在引入Handlebars .js之前需要引进jquery.js。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"js/jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"js/handlebars.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h1 id="第二步：编写Handlebars-模板"><a href="#第二步：编写Handlebars-模板" class="headerlink" title="第二步：编写Handlebars 模板"></a>第二步：编写Handlebars 模板</h1><p>Handlebars的表达式 是以“”开始，以“”结尾。如果上下文中包含HTML代码，则需要把双大括号换成三个大括号即可：“”，可以通过script标签把模板加载到浏览器中，并设置script标签的type属性为浏览器不能够辨别的（此处可自由发挥）。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">id</span>=<span class="string">"template"</span> <span class="attr">type</span>=<span class="string">"text/html"</span>&gt;</span><span class="xml"></span></div><div class="line">    &#123;&#123;#each data&#125;&#125;</div><div class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>姓名:&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span> </div><div class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>年龄:&#123;&#123;age&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>性别:&#123;&#123;sex&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span>		</div><div class="line">    &#123;&#123;/each&#125;&#125; </div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="第三步：预编译Handlebars-的模板"><a href="#第三步：预编译Handlebars-的模板" class="headerlink" title="第三步：预编译Handlebars 的模板"></a>第三步：预编译Handlebars 的模板</h1><p>在 JavaScript 中可以使用 Handlebars.compile()方法来编译模板。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> source = $(<span class="string">"#template"</span>).html();</div><div class="line"><span class="keyword">var</span> template = Handlebars.compile();</div></pre></td></tr></table></figure>
-<h1 id="第四步：传递上下文，执行模板"><a href="#第四步：传递上下文，执行模板" class="headerlink" title="第四步：传递上下文，执行模板"></a>第四步：传递上下文，执行模板</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data=[</div><div class="line">    &#123;<span class="attr">name</span>:<span class="string">"张三"</span>,<span class="attr">age</span>:<span class="string">"18"</span>，sex：<span class="string">"男"</span>&#125;,</div><div class="line">    &#123;<span class="attr">name</span>:<span class="string">"李四"</span>,<span class="attr">age</span>:<span class="string">"22"</span>，sex：<span class="string">"女"</span>&#125;,</div><div class="line">    &#123;<span class="attr">name</span>:<span class="string">"王五"</span>,<span class="attr">age</span>:<span class="string">"24"</span>，sex：<span class="string">"男"</span>&#125;</div><div class="line">];</div><div class="line"><span class="keyword">var</span> html = template(&#123;<span class="attr">data</span>:data&#125;);</div></pre></td></tr></table></figure>
-<p>执行之后，这个模板就会渲染出：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>姓名:张三<span class="tag">&lt;/<span class="name">td</span>&gt;</span> </div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>年龄:18<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>性别:男<span class="tag">&lt;/<span class="name">td</span>&gt;</span>		</div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>姓名:李四<span class="tag">&lt;/<span class="name">td</span>&gt;</span> </div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>年龄:22<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>性别:女<span class="tag">&lt;/<span class="name">td</span>&gt;</span>		</div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>姓名:王五<span class="tag">&lt;/<span class="name">td</span>&gt;</span> </div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>年龄:24<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>性别:男<span class="tag">&lt;/<span class="name">td</span>&gt;</span>		</div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>本篇文章只是叙述了使用Handlebars最基础的流程，后续将讲解Handlebars.js的具体用法。</p>
+        <p>HTML5的audio功能上已经非常强大，回放，跳转，缓冲等以前只能用flash才能实现的功能，现在HTML的audio都能轻松搞定。<br><a id="more"></a></p>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><pre><code>&lt;audio src=”音频的地址”&gt;备用（当浏览器不支持audio时显示的内容）&lt;/audio&gt;
+</code></pre><h3 id="控制函数功能说明"><a href="#控制函数功能说明" class="headerlink" title="控制函数功能说明"></a>控制函数功能说明</h3><ol>
+<li>load()   加载音频、视频软件，通常不必调用，除非是动态生成的元素，用来在播放前预加载；</li>
+<li>play()    加载并播放音频、视频文件，除非文件已经暂停在其他位置，否则默认重头开始播放；</li>
+<li>pause() 暂停处于播放状态的音频、视频文件；</li>
+</ol>
+<h3 id="只读属性属性说明"><a href="#只读属性属性说明" class="headerlink" title="只读属性属性说明"></a>只读属性属性说明</h3><ol>
+<li>duration   获取媒体文件的播放时长，以s为单位，如果无法获取，则为NaN；</li>
+<li>paused     如果媒体文件被暂停，则返回true，否则返回false；</li>
+<li>ended       如果媒体文件播放完毕，则返回true；</li>
+<li>startTime  返回起始播放时间，一般是0.0，除非是缓冲过的媒体文件，并一部分内容已经不在缓冲区；</li>
+<li>error          在发生了错误后返回的错误代码；</li>
+<li>currentSrc  以字符串形式返回正在播放或已加载的文件，对应于浏览器在source元素中选择的文件；</li>
+</ol>
+<h3 id="可脚本控制的特性值"><a href="#可脚本控制的特性值" class="headerlink" title="可脚本控制的特性值"></a>可脚本控制的特性值</h3><ol>
+<li>autoplay       自动播放已经加载的的媒体文件，或查询是否已设置为autoplay；</li>
+<li>loop              将媒体文件设置为循环播放，或查询是否已设置为loop；</li>
+<li>currentTime 以s为单位返回从开始播放到目前所花的时间，也可设置currentTime的值来跳转到特定位置；</li>
+<li>controls        显示或者隐藏用户控制界面；</li>
+<li>volume         在0.0到1.0间设置音量值,或查询当前音量值；</li>
+<li>muted           设置是否静音；</li>
+<li>autobuffer     媒体文件播放前是否进行缓冲加载，如果设置了autoplay，则忽略此特性；</li>
+</ol>
+<p>HTML结构：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"audioControl"</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"play"</span>&gt;</span>  </div><div class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"play"</span>&gt;</span>Play<span class="tag">&lt;/<span class="name">span</span>&gt;</span>  </div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </div><div class="line">  </div><div class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">id</span>=<span class="string">"media"</span> <span class="attr">src</span>=<span class="string">"test.mp3"</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>JS代码结构：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> media = $(<span class="string">'#media'</span>)[<span class="number">0</span>];  </div><div class="line"><span class="keyword">var</span> audioTimer = <span class="literal">null</span>;  </div><div class="line">  </div><div class="line"><span class="comment">//绑定播放暂停控制  </span></div><div class="line">$(<span class="string">'.play'</span>).bind(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </div><div class="line">    playAudio();  </div><div class="line">&#125;);   </div><div class="line">  </div><div class="line"><span class="comment">//播放暂停切换  </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">playAudio</span>(<span class="params"></span>) </span>&#123;  </div><div class="line">    <span class="keyword">if</span>(media.paused) &#123;  </div><div class="line">        play();  </div><div class="line">    &#125; <span class="keyword">else</span> &#123;  </div><div class="line">        pause();  </div><div class="line">    &#125;  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line"><span class="comment">//播放  </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">play</span>(<span class="params"></span>) </span>&#123;  </div><div class="line">    media.play();  </div><div class="line">    $(<span class="string">'#play'</span>).html(<span class="string">'Pause'</span>);  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line"><span class="comment">//暂停  </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">pause</span>(<span class="params"></span>) </span>&#123;  </div><div class="line">    media.pause();  </div><div class="line">    $(<span class="string">'#play'</span>).html(<span class="string">'Play'</span>);  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -366,7 +383,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Handlebars/" rel="tag">#Handlebars</a>
+            <a href="/tags/HTML5/" rel="tag">#HTML5</a>
           
         </div>
       
@@ -375,16 +392,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/14/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/11/23/hexo/" rel="next" title="HEXO搭建个人博客">
+                <i class="fa fa-chevron-left"></i> HEXO搭建个人博客
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/11/23/hexo/" rel="prev" title="HEXO搭建个人博客">
-                HEXO搭建个人博客 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/28/arttemplate/" rel="prev" title="artTemplate语法简介">
+                artTemplate语法简介 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -411,8 +428,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/14/blog/"
-           data-title="Handlebars使用流程" data-url="http://www.ningcl.com/2016/11/14/blog/">
+      <div class="ds-thread" data-thread-key="2016/12/28/audio/"
+           data-title="HTML5中audio的详细使用" data-url="http://www.ningcl.com/2016/12/28/audio/">
       </div>
     
   </div>
@@ -525,7 +542,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一步：导入相关的JS文件"><span class="nav-number">1.</span> <span class="nav-text">第一步：导入相关的JS文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二步：编写Handlebars-模板"><span class="nav-number">2.</span> <span class="nav-text">第二步：编写Handlebars 模板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三步：预编译Handlebars-的模板"><span class="nav-number">3.</span> <span class="nav-text">第三步：预编译Handlebars 的模板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四步：传递上下文，执行模板"><span class="nav-number">4.</span> <span class="nav-text">第四步：传递上下文，执行模板</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本用法"><span class="nav-number">1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制函数功能说明"><span class="nav-number">2.</span> <span class="nav-text">控制函数功能说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#只读属性属性说明"><span class="nav-number">3.</span> <span class="nav-text">只读属性属性说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可脚本控制的特性值"><span class="nav-number">4.</span> <span class="nav-text">可脚本控制的特性值</span></a></li></ol></div>
             
           </div>
         </section>

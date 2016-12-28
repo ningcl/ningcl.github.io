@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Handlebars," />
+  <meta name="keywords" content="artTemplate," />
 
 
 
@@ -102,16 +102,16 @@
 
 
 
-<meta name="description" content="Handlebars 是 JavaScript 一个语义模板库，通过对view和data的分离来快速构建web模板。它采用”Logic-less template”（无逻辑模版）的思路，在加载时被预编译，而不是到了客户端执行到代码时再去编译，这样可以保证模板加载和运行的速度。Handlebars兼容Mustache，你可以在Handlebars中导入Mustache模板。">
+<meta name="description" content="artTemplate 是新一代 javascript 模板引擎，它采用预编译方式让性能有了质的飞跃，并且充分利用 javascript 引擎特性，使得其性能无论在前端还是后端都有极其出色的表现。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Handlebars使用流程">
-<meta property="og:url" content="http://www.ningcl.com/2016/11/14/blog/index.html">
+<meta property="og:title" content="artTemplate语法简介">
+<meta property="og:url" content="http://www.ningcl.com/2016/12/28/arttemplate/index.html">
 <meta property="og:site_name" content="水泊梁山">
-<meta property="og:description" content="Handlebars 是 JavaScript 一个语义模板库，通过对view和data的分离来快速构建web模板。它采用”Logic-less template”（无逻辑模版）的思路，在加载时被预编译，而不是到了客户端执行到代码时再去编译，这样可以保证模板加载和运行的速度。Handlebars兼容Mustache，你可以在Handlebars中导入Mustache模板。">
-<meta property="og:updated_time" content="2016-12-28T07:33:30.987Z">
+<meta property="og:description" content="artTemplate 是新一代 javascript 模板引擎，它采用预编译方式让性能有了质的飞跃，并且充分利用 javascript 引擎特性，使得其性能无论在前端还是后端都有极其出色的表现。">
+<meta property="og:updated_time" content="2016-12-28T07:38:13.747Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Handlebars使用流程">
-<meta name="twitter:description" content="Handlebars 是 JavaScript 一个语义模板库，通过对view和data的分离来快速构建web模板。它采用”Logic-less template”（无逻辑模版）的思路，在加载时被预编译，而不是到了客户端执行到代码时再去编译，这样可以保证模板加载和运行的速度。Handlebars兼容Mustache，你可以在Handlebars中导入Mustache模板。">
+<meta name="twitter:title" content="artTemplate语法简介">
+<meta name="twitter:description" content="artTemplate 是新一代 javascript 模板引擎，它采用预编译方式让性能有了质的飞跃，并且充分利用 javascript 引擎特性，使得其性能无论在前端还是后端都有极其出色的表现。">
 
 
 
@@ -129,7 +129,7 @@
   };
 </script>
 
-  <title> Handlebars使用流程 | 水泊梁山 </title>
+  <title> artTemplate语法简介 | 水泊梁山 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -269,7 +269,7 @@
             
             
               
-                Handlebars使用流程
+                artTemplate语法简介
               
             
           </h1>
@@ -281,8 +281,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-14T20:34:31+08:00" content="2016-11-14">
-              2016-11-14
+            <time itemprop="dateCreated" datetime="2016-12-28T15:30:47+08:00" content="2016-12-28">
+              2016-12-28
             </time>
           </span>
 
@@ -311,8 +311,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/14/blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/14/blog/" itemprop="commentsCount"></span>
+                <a href="/2016/12/28/arttemplate/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/28/arttemplate/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -335,16 +335,32 @@
       
 
       
-        <p>Handlebars 是 JavaScript 一个语义模板库，通过对view和data的分离来快速构建web模板。它采用”Logic-less template”（无逻辑模版）的思路，在加载时被预编译，而不是到了客户端执行到代码时再去编译，这样可以保证模板加载和运行的速度。Handlebars兼容Mustache，你可以在Handlebars中导入Mustache模板。<br><a id="more"></a></p>
-<h1 id="第一步：导入相关的JS文件"><a href="#第一步：导入相关的JS文件" class="headerlink" title="第一步：导入相关的JS文件"></a>第一步：导入相关的JS文件</h1><p>Handlebars 是一个Jquery插件，在引入Handlebars .js之前需要引进jquery.js。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"js/jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"js/handlebars.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h1 id="第二步：编写Handlebars-模板"><a href="#第二步：编写Handlebars-模板" class="headerlink" title="第二步：编写Handlebars 模板"></a>第二步：编写Handlebars 模板</h1><p>Handlebars的表达式 是以“”开始，以“”结尾。如果上下文中包含HTML代码，则需要把双大括号换成三个大括号即可：“”，可以通过script标签把模板加载到浏览器中，并设置script标签的type属性为浏览器不能够辨别的（此处可自由发挥）。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">id</span>=<span class="string">"template"</span> <span class="attr">type</span>=<span class="string">"text/html"</span>&gt;</span><span class="xml"></span></div><div class="line">    &#123;&#123;#each data&#125;&#125;</div><div class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>姓名:&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span> </div><div class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>年龄:&#123;&#123;age&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>性别:&#123;&#123;sex&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span>		</div><div class="line">    &#123;&#123;/each&#125;&#125; </div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="第三步：预编译Handlebars-的模板"><a href="#第三步：预编译Handlebars-的模板" class="headerlink" title="第三步：预编译Handlebars 的模板"></a>第三步：预编译Handlebars 的模板</h1><p>在 JavaScript 中可以使用 Handlebars.compile()方法来编译模板。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> source = $(<span class="string">"#template"</span>).html();</div><div class="line"><span class="keyword">var</span> template = Handlebars.compile();</div></pre></td></tr></table></figure>
-<h1 id="第四步：传递上下文，执行模板"><a href="#第四步：传递上下文，执行模板" class="headerlink" title="第四步：传递上下文，执行模板"></a>第四步：传递上下文，执行模板</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data=[</div><div class="line">    &#123;<span class="attr">name</span>:<span class="string">"张三"</span>,<span class="attr">age</span>:<span class="string">"18"</span>，sex：<span class="string">"男"</span>&#125;,</div><div class="line">    &#123;<span class="attr">name</span>:<span class="string">"李四"</span>,<span class="attr">age</span>:<span class="string">"22"</span>，sex：<span class="string">"女"</span>&#125;,</div><div class="line">    &#123;<span class="attr">name</span>:<span class="string">"王五"</span>,<span class="attr">age</span>:<span class="string">"24"</span>，sex：<span class="string">"男"</span>&#125;</div><div class="line">];</div><div class="line"><span class="keyword">var</span> html = template(&#123;<span class="attr">data</span>:data&#125;);</div></pre></td></tr></table></figure>
-<p>执行之后，这个模板就会渲染出：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>姓名:张三<span class="tag">&lt;/<span class="name">td</span>&gt;</span> </div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>年龄:18<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>性别:男<span class="tag">&lt;/<span class="name">td</span>&gt;</span>		</div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>姓名:李四<span class="tag">&lt;/<span class="name">td</span>&gt;</span> </div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>年龄:22<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>性别:女<span class="tag">&lt;/<span class="name">td</span>&gt;</span>		</div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>姓名:王五<span class="tag">&lt;/<span class="name">td</span>&gt;</span> </div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>年龄:24<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>性别:男<span class="tag">&lt;/<span class="name">td</span>&gt;</span>		</div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>本篇文章只是叙述了使用Handlebars最基础的流程，后续将讲解Handlebars.js的具体用法。</p>
+        <p>artTemplate 是新一代 javascript 模板引擎，它采用预编译方式让性能有了质的飞跃，并且充分利用 javascript 引擎特性，使得其性能无论在前端还是后端都有极其出色的表现。<br><a id="more"></a></p>
+<h4 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h4><ol>
+<li>性能卓越，执行速度通常是 Mustache 与 tmpl 的 20 多倍（性能测试）</li>
+<li>支持运行时调试，可精确定位异常模板所在语句（演示）</li>
+<li>对 NodeJS Express 友好支持</li>
+<li>安全，默认对输出进行转义、在沙箱中运行编译后的代码（Node版本可以安全执行用户上传的模板）</li>
+<li>支持include语句</li>
+<li>可在浏览器端实现按路径加载模板（详情）</li>
+<li>支持预编译，可将模板转换成为非常精简的 js 文件</li>
+<li>模板语句简洁，无需前缀引用数据，有简洁版本与原生语法版本可选</li>
+<li>支持所有流行的浏览器</li>
+</ol>
+<h4 id="编写模板"><a href="#编写模板" class="headerlink" title="编写模板"></a>编写模板</h4><p>使用一个type=”text/html”的script标签存放模板</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;script id=&quot;test&quot; type=&quot;text/html&quot;&gt;</div><div class="line">	&lt;h1&gt;&#123;&#123;title&#125;&#125;&lt;/h1&gt;</div><div class="line">	&lt;ul&gt;</div><div class="line">    	&#123;&#123;each list as value i&#125;&#125;</div><div class="line">        	&lt;li&gt;索引 &#123;&#123;i + 1&#125;&#125; ：&#123;&#123;value&#125;&#125;&lt;/li&gt;</div><div class="line">    	&#123;&#123;/each&#125;&#125;</div><div class="line">	&lt;/ul&gt;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h4 id="渲染模板"><a href="#渲染模板" class="headerlink" title="渲染模板"></a>渲染模板</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var data = &#123;</div><div class="line">    title: &apos;标签&apos;,</div><div class="line">    list: [&apos;文艺&apos;, &apos;博客&apos;, &apos;摄影&apos;, &apos;电影&apos;, &apos;民谣&apos;, &apos;旅行&apos;, &apos;吉他&apos;]</div><div class="line">&#125;;</div><div class="line">var html = template(&apos;test&apos;, data);</div><div class="line">document.getElementById(&apos;content&apos;).innerHTML = html;</div></pre></td></tr></table></figure>
+<h4 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h4> 符号包裹起来的语句则为模板的逻辑表达式。<br><br><strong>对内容编码输出：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;content&#125;&#125;</div></pre></td></tr></table></figure>
+<p><strong>不编码输出：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;#content&#125;&#125;</div></pre></td></tr></table></figure></p>
+<pre><code>注：编码可以防止数据中含有 HTML 字符串，避免引起 XSS 攻击。
+</code></pre><p><strong>条件表达式</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;if admin&#125;&#125;</div><div class="line">    &lt;p&gt;admin&lt;/p&gt;</div><div class="line">&#123;&#123;else if code &gt; 0&#125;&#125;</div><div class="line">    &lt;p&gt;master&lt;/p&gt;</div><div class="line">&#123;&#123;else&#125;&#125;</div><div class="line">    &lt;p&gt;error!&lt;/p&gt;</div><div class="line">&#123;&#123;/if&#125;&#125;</div></pre></td></tr></table></figure>
+<p><strong>遍历表达式</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;each list&#125;&#125;</div><div class="line">    &lt;li&gt;&#123;&#123;$index&#125;&#125; - &#123;&#123;$value.user&#125;&#125;&lt;/li&gt;</div><div class="line">&#123;&#123;/each&#125;</div></pre></td></tr></table></figure>
+<h4 id="辅助方法"><a href="#辅助方法" class="headerlink" title="辅助方法"></a>辅助方法</h4><p>用template.helper(name, callback)注册公用辅助方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">template.helper(&apos;dateFormat&apos;, function (date, format) &#123;</div><div class="line">    // ..</div><div class="line">    return value;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>模板中使用的方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;time | dateFormat:&apos;yyyy-MM-dd hh:mm:ss&apos;&#125;&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -366,7 +382,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Handlebars/" rel="tag">#Handlebars</a>
+            <a href="/tags/artTemplate/" rel="tag">#artTemplate</a>
           
         </div>
       
@@ -375,17 +391,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/14/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/12/28/audio/" rel="next" title="HTML5中audio的详细使用">
+                <i class="fa fa-chevron-left"></i> HTML5中audio的详细使用
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/23/hexo/" rel="prev" title="HEXO搭建个人博客">
-                HEXO搭建个人博客 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -411,8 +423,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/14/blog/"
-           data-title="Handlebars使用流程" data-url="http://www.ningcl.com/2016/11/14/blog/">
+      <div class="ds-thread" data-thread-key="2016/12/28/arttemplate/"
+           data-title="artTemplate语法简介" data-url="http://www.ningcl.com/2016/12/28/arttemplate/">
       </div>
     
   </div>
@@ -525,7 +537,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一步：导入相关的JS文件"><span class="nav-number">1.</span> <span class="nav-text">第一步：导入相关的JS文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二步：编写Handlebars-模板"><span class="nav-number">2.</span> <span class="nav-text">第二步：编写Handlebars 模板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三步：预编译Handlebars-的模板"><span class="nav-number">3.</span> <span class="nav-text">第三步：预编译Handlebars 的模板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四步：传递上下文，执行模板"><span class="nav-number">4.</span> <span class="nav-text">第四步：传递上下文，执行模板</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#特性"><span class="nav-number">1.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写模板"><span class="nav-number">2.</span> <span class="nav-text">编写模板</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#渲染模板"><span class="nav-number">3.</span> <span class="nav-text">渲染模板</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表达式"><span class="nav-number">4.</span> <span class="nav-text">表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#辅助方法"><span class="nav-number">5.</span> <span class="nav-text">辅助方法</span></a></li></ol></div>
             
           </div>
         </section>
