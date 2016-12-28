@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ningcl, next,前端" />
+  <meta name="keywords" content="javascript," />
 
 
 
@@ -102,15 +102,16 @@
 
 
 
-<meta name="description" content="好好学习，天天向上">
-<meta property="og:type" content="website">
-<meta property="og:title" content="水泊梁山">
-<meta property="og:url" content="http://www.ningcl.com/tags/hexo/index.html">
+<meta name="description" content="splice()方法算是最强大的数组方法了，它有很多种用法，主要用于删除指定位置的数组项，在指定的位置插入数组项，在指定位置替换数组项，slpice()方法始终都会返回一个数组，该数组包括从原始数组中删除的项，如果没有删除，则返回空数组。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="splice用法解析">
+<meta property="og:url" content="http://www.ningcl.com/2016/12/28/splice/index.html">
 <meta property="og:site_name" content="水泊梁山">
-<meta property="og:description" content="好好学习，天天向上">
+<meta property="og:description" content="splice()方法算是最强大的数组方法了，它有很多种用法，主要用于删除指定位置的数组项，在指定的位置插入数组项，在指定位置替换数组项，slpice()方法始终都会返回一个数组，该数组包括从原始数组中删除的项，如果没有删除，则返回空数组。">
+<meta property="og:updated_time" content="2016-12-28T07:54:49.364Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="水泊梁山">
-<meta name="twitter:description" content="好好学习，天天向上">
+<meta name="twitter:title" content="splice用法解析">
+<meta name="twitter:description" content="splice()方法算是最强大的数组方法了，它有很多种用法，主要用于删除指定位置的数组项，在指定的位置插入数组项，在指定位置替换数组项，slpice()方法始终都会返回一个数组，该数组包括从原始数组中删除的项，如果没有删除，则返回空数组。">
 
 
 
@@ -128,7 +129,7 @@
   };
 </script>
 
-  <title> 标签: hexo | 水泊梁山 </title>
+  <title> splice用法解析 | 水泊梁山 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -149,7 +150,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right  ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -247,46 +248,137 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        hexo
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                splice用法解析
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-28T15:51:49+08:00" content="2016-12-28">
+              2016-12-28
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/12/28/splice/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/28/splice/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>splice()方法算是最强大的数组方法了，它有很多种用法，主要用于删除指定位置的数组项，在指定的位置插入数组项，在指定位置替换数组项，slpice()方法始终都会返回一个数组，该数组包括从原始数组中删除的项，如果没有删除，则返回空数组。<br><a id="more"></a></p>
+<h4 id="功能简介"><a href="#功能简介" class="headerlink" title="功能简介"></a>功能简介</h4><ol>
+<li>删除：可以删除任意数量的项，只需要指定两个参数，要删除的第一项的位置和要删除的项目数；</li>
+<li>插入：可以向指定位置插入任意数量的项，需要指定三个参数，起始位置，0（要删除的项数）和要插入的项，如果要插入多个项，可以再传第四，第五，以至任意多个项；</li>
+<li>替换：可以指定位置插入任意数量的项，且同时删除任意数量的项，只要指定3个参数，起始位置，要删除的项数，和要插入的项数，插入的项数不必等于删除的项数；</li>
+</ol>
+<h4 id="删除案例"><a href="#删除案例" class="headerlink" title="删除案例"></a>删除案例</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> lang = [<span class="string">"php"</span>,<span class="string">"java"</span>,<span class="string">"javascript"</span>];</div><div class="line"><span class="comment">//删除</span></div><div class="line"><span class="keyword">var</span> removed = lang.splice(<span class="number">1</span>,<span class="number">1</span>);</div><div class="line"><span class="built_in">console</span>.log(lang);     <span class="comment">//php,javascript</span></div></pre></td></tr></table></figure>
+<h4 id="插入案例"><a href="#插入案例" class="headerlink" title="插入案例"></a>插入案例</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> colors = [<span class="string">'red'</span>,<span class="string">'green'</span>,<span class="string">'blue'</span>,<span class="string">'yellow'</span>];</div><div class="line">colors.splice(<span class="number">2</span>,<span class="number">0</span>,<span class="string">'black'</span>,<span class="string">'pink'</span>);</div><div class="line"><span class="built_in">console</span>.log(colors); <span class="comment">//red,green,black,pink,blue,yellow</span></div></pre></td></tr></table></figure>
+<h4 id="替换案例"><a href="#替换案例" class="headerlink" title="替换案例"></a>替换案例</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> colors= [<span class="string">'red'</span>,<span class="string">'green'</span>,<span class="string">'blue'</span>,<span class="string">'yellow'</span>];</div><div class="line">colors.splice(<span class="number">2</span>,<span class="number">1</span>,<span class="string">'white'</span>,<span class="string">'orange'</span>)</div><div class="line"><span class="built_in">console</span>.log(colors); <span class="comment">//red ,green,white,orange,yellow</span></div></pre></td></tr></table></figure>
+<p>注意：splice函数会修改原来数组的值</p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/11/23/hexo/" itemprop="url">
-              
-                <span itemprop="name">HEXO搭建个人博客</span>
-              
-            </a>
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-11-23T18:57:17+08:00"
-              content="2016-11-23" >
-          11-23
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag">#javascript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/28/arttemplate/" rel="next" title="artTemplate语法简介">
+                <i class="fa fa-chevron-left"></i> artTemplate语法简介
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -294,6 +386,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/12/28/splice/"
+           data-title="splice用法解析" data-url="http://www.ningcl.com/2016/12/28/splice/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -313,8 +413,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -386,6 +495,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#功能简介"><span class="nav-number">1.</span> <span class="nav-text">功能简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除案例"><span class="nav-number">2.</span> <span class="nav-text">删除案例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入案例"><span class="nav-number">3.</span> <span class="nav-text">插入案例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#替换案例"><span class="nav-number">4.</span> <span class="nav-text">替换案例</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -489,6 +609,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
